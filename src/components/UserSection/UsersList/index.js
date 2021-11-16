@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserCard from '../UserCard';
+import UserCard from './UserCard';
 
 
 class UsersList extends Component {
@@ -12,10 +12,10 @@ class UsersList extends Component {
       }))
     )
   }
-  mapUsers = (user)=>{return (
+  mapUsers = (user)=> (
     <UserCard key={user.id} user={user} 
     userSelector={this.userSelector}/>
-  )}
+  )
   render() {
     const {users} = this.props;
     return (
