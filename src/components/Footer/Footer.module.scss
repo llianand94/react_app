@@ -1,0 +1,14 @@
+@import '../../common/styles/templates';
+
+.container{
+  display: flex;
+  justify-content: flex-end;  
+}
+
+.light{
+  @extend %light;
+}
+
+.dark{
+  @extend %dark;
+}

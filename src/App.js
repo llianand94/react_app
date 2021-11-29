@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {UserContext, ThemeContext} from './context';
 import Header from './components/Header';
 import Tree from './components/Tree';
+import Footer from './components/Footer';
 import CONSTANTS from './constants';
 const {THEMES} = CONSTANTS;
 
@@ -30,6 +31,7 @@ class App extends Component{
         <Header />
         <Tree/>
         </UserContext.Provider>
+        <Footer/>
       </ThemeContext.Provider>;
   }
   
