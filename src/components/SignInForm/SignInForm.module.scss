@@ -1,0 +1,31 @@
+@import './../../common/styles/breakpoints';
+@import './../../common/styles/templates';
+.container{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid pink;
+  @media screen and (min-width:$md){
+    background-color: blue;
+  }
+}
+.input{
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 2px solid pink;
+  outline: 0px solid pink;
+}
+.btn{
+  border: 2px solid pink;
+  background-color: #fff;
+  color: rgb(180, 93, 105);
+  font-size: 1.5rem;
+  cursor: pointer;
+  @extend %one-line;
+}
+
+.invalid{
+  border-color: red;
+}
