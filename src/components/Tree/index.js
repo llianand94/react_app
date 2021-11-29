@@ -9,14 +9,14 @@ const {THEMES} = CONSTANTS;
 const Tree = (props) => {
   return(
     <ThemeContext.Consumer>{
-      ([theme])=>{
+      ([theme,setTheme,language])=>{
       const classNames = cx(styles.container,{
         [styles.light] : theme===THEMES.LIGHT,
         [styles.dark] : theme===THEMES.DARK,
       });
         return (
           <div className={classNames}>
-            <h2>Tree</h2>
+            <h2 className={styles.marginY}>{language==='ENG'?'Tree':'Дерево'}</h2>
             <Parent/>
           </div>
         );

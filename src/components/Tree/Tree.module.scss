@@ -1,7 +1,9 @@
 @import '../../common/styles/templates';
 
 .container{
-  text-align: center;  
+  height: 88vh;
+  text-align: center;
+
 }
 .light{
   @extend %light;
@@ -9,4 +11,8 @@
 
 .dark{
   @extend %dark;
+}
+.marginY{
+  margin-top: 0;
+  margin-bottom: 0;
 }

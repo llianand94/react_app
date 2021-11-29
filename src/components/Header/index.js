@@ -22,7 +22,7 @@ class Header extends Component {
         {
           (user) => (<header className={classNames}>
             <p>{user.fname} {user.sname} </p>
-            <div onClick={()=>{
+            <div className={styles.imgWrapper} onClick={()=>{
               const nextTheme = theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
               setTheme(nextTheme);
             }}>              
