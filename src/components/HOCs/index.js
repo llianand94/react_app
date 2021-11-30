@@ -4,8 +4,8 @@ export const WithThemeContext = InnerCompomt => props =>{
   
   return (
     <ThemeContext.Consumer>
-    {([theme, setTheme]) => {
-    return <InnerCompomt theme={theme} setTheme={setTheme}> </InnerCompomt>}
+    {([theme, setTheme, language]) => {
+    return <InnerCompomt theme={theme} setTheme={setTheme} language={language}> </InnerCompomt>}
   }
   </ThemeContext.Consumer>
   )
