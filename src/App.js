@@ -1,19 +1,12 @@
 import './App.css';
 import React from 'react';
 
-import SignInForm from './components/SignInForm';
-import SIGN_UP_SCHEME from './utils/schemaValidator';
+import SignInForm from './components/forms/SignInForm';
 
 
-const App = () => {
-  const userData ={
-    fname:'Rewtgafg',
-    sname:'Rewt',
-    email:'ewtgafg@gmail.com',
-    password:'wGer13f$tgafg',
-    age:20,
-  }
-  console.log(SIGN_UP_SCHEME.validateSync(userData));
+
+const App = () => {  
+  
   return (
     <div>
       <SignInForm/>

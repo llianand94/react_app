@@ -1,0 +1,14 @@
+.label{
+  display: block;
+}
+.input{
+  padding: 0.5rem;
+}
+.valid{
+  border-color: rgb(132, 189, 132);
+  color: rgb(2, 73, 34);
+}
+.invalid{
+  border-color: rgb(95, 50, 47);
+  color: rgb(121, 35, 29);
+}
