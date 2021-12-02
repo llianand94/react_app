@@ -1,20 +1,14 @@
 import React from 'react';
 import UserCard from '../UserCard';
-import { ThemeContext } from '../../../context';
+import { WithThemeContext } from '../../HOCs';
 
-const Child = (props) => {
-  
-  return <ThemeContext.Consumer>{
-    ([a,b,language])=>{
-      return (
-      <div>
+export  const Child = (props) => {
+  const {language} = props;
+  return <div>
         <h2>{language==='ENG'?'Child':'Ребенок'}</h2>
         <UserCard language={language}/>
-      </div>
-    )}
-    }
-    </ThemeContext.Consumer>
-  
+      </div>   
 }
 
-export default Child;
+export const ChildWithThemeContext = WithThemeContext(Child);
+
