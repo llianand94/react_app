@@ -1,24 +1,40 @@
-import './App.css';
-import React from 'react';
+import { FooterWithThemeContext } from './components/Footer';
+import { ThemeContext, UserContext } from './context';
+import { HeaderWithThemeContext } from './components/Header';
+import TreeWithThemeContext from './components/Tree';
+import { Component } from 'react';
+import CONSTANTS from './constants';
+const {THEMES, LANG} = CONSTANTS;
 
-import SignInForm from './components/SignInForm';
-import SIGN_UP_SCHEME from './utils/schemaValidator';
 
-
-const App = () => {
-  const userData ={
-    fname:'Rewtgafg',
-    sname:'Rewt',
-    email:'ewtgafg@gmail.com',
-    password:'wGer13f$tgafg',
-    age:20,
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme:THEMES.LIGHT,
+      language:LANG.EN,
+      user:{
+        id:1,
+        fname:'Elon',
+        sname:'Musk',
+        imgSrc:'https://i.insider.com/6171279833f4b300189ad407?width=700'
+      }
+    }
   }
-  console.log(SIGN_UP_SCHEME.validateSync(userData));
-  return (
-    <div>
-      <SignInForm/>
-    </div>
-  );
+
+  setTheme = (theme) => {this.setState({theme})}
+  setLanguage = (language) =>{this.setState({language:language})}
+
+  render(){
+    const {user, theme, language} = this.state;
+    return <ThemeContext.Provider value={[theme,this.setTheme,language,this.setLanguage]}>
+      <UserContext.Provider value={user}>
+        <HeaderWithThemeContext />
+        <TreeWithThemeContext/>
+        <FooterWithThemeContext/>
+        </UserContext.Provider>        
+      </ThemeContext.Provider>;
+  }
 }
 
 export default App;

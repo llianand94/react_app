@@ -1,13 +1,26 @@
-import { ThemeContext} from "../../context";
+import { ThemeContext,UserContext} from "../../context";
 
-export const WithThemeContext = InnerCompomt => props =>{
-  
-  return (
-    <ThemeContext.Consumer>
-    {([theme, setTheme, language]) => {
-    return <InnerCompomt theme={theme} setTheme={setTheme} language={language}> </InnerCompomt>}
+export const WithThemeContext = (InnerComponent) => {
+  return (props) =>{
+  // это анонимный функциональный компонент JSX
+    return (
+      <ThemeContext.Consumer>
+      {([theme, setTheme, language,setLanguage]) => {
+      return <InnerComponent theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage}> </InnerComponent>}
+    }
+    </ThemeContext.Consumer>
+    )
   }
-  </ThemeContext.Consumer>
-  )
 }
-//функция которая возвращает переденный компонент!!!
+
+export const WithUserContext = (InnerComponent) =>{
+  return ({theme, setTheme, language, setLanguage}) =>{
+    return (<UserContext.Consumer>
+      {(user)=>{
+        return <InnerComponent user={user} theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage}
+        >
+        </InnerComponent>
+      }}
+    </UserContext.Consumer>)
+  }
+}

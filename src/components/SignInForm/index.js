@@ -8,7 +8,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
-        
+        <p>Empty</p>
       </div>
     );
   }

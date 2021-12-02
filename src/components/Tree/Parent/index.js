@@ -1,18 +1,15 @@
 import React from 'react';
-import Child from '../Child';
-import { ThemeContext } from '../../../context';
+import { ChildWithThemeContext } from '../Child';
+import { WithThemeContext} from '../../HOCs';
 
-const Parent = (props) => {
-
+export const Parent = (props) => {
+ const {language} = props;
   return (
-    <ThemeContext.Consumer>{([theme, setTheme,language])=>{
-    return <div>
+    <div>
       <h2>{language==='ENG'?'Parent':'Родитель'}</h2>
-      <Child/>
-      </div>
-    }}</ThemeContext.Consumer>
-    
+      <ChildWithThemeContext/>
+      </div>    
   );
 }
+export const ParentWithThemeContext = WithThemeContext(Parent);
 
-export default Parent;
