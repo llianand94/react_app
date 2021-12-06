@@ -13,14 +13,11 @@ export const WithThemeContext = (InnerComponent) => {
   }
 }
 
-export const WithUserContext = (InnerComponent) =>{
-  return ({theme, setTheme, language, setLanguage}) =>{
-    return (<UserContext.Consumer>
+export const WithUserContext = (InnerComponent) => (props) =>(
+    <UserContext.Consumer>
       {(user)=>{
-        return <InnerComponent user={user} theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage}
-        >
-        </InnerComponent>
-      }}
+        return <InnerComponent user={user} {...props}/>}
+      }
     </UserContext.Consumer>)
-  }
-}
+  
+
