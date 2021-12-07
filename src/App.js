@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react';
-import LearnHooks from './components/LearnHooks'
+import FuncStopWatch from './components/FuncStopWatch'
 const App = () => {
   const [isVisible, setIsvisible] = useState(true);
   const handlerVis = () =>{
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
       <button onClick={handlerVis}> Switch isVisible</button>
-      {isVisible && <LearnHooks/>}
+      {isVisible && <FuncStopWatch/>}
     </div>
   );
 }

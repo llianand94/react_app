@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 
 const LearnHooks = () => {
   const [count, setCount] = useState(0);
-const [step, setStep] = useState(10);
-const handlerStep = ({target:{value}}) =>{
-  setStep(Number(value));
-}
+  const [step, setStep] = useState(10);
+  
+  const handlerStep = ({target:{value}}) =>{
+    setStep(Number(value));
+  }
   useEffect(() => {
     const handlerClick = () => {
       setCount(count=>count + step);
