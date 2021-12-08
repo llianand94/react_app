@@ -1,4 +1,5 @@
 import React, {useContext, useState, useCallback, useMemo} from 'react';
+import FuncNameList from './../components/FuncNameList';
 import UserProfile from '../components/UserProfile';
 import { ThemeContext } from '../context';
 import CONSTANTS from '/home/fm2021-2/Projects/react_app/src/constants';
@@ -41,6 +42,7 @@ const Homepage = () => {
       <button onClick={logHanler}>Log value</button>
       <p>Home page</p>
       <UserProfile/>
+      <FuncNameList/>
     </div>
   );
 }

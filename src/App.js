@@ -2,8 +2,9 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeContext, UserContext } from './context';
-import Homepage from './pages/HomePage';
+
 import CONSTANTS from './constants';
+import HomePage from './pages/HomePage';
 const {THEMES} = CONSTANTS;
 
 const App = () => {
@@ -14,8 +15,7 @@ const App = () => {
     name:'Ursoc',
   });
   const arrThemeState = useState(THEMES.LIGHT);
-  // const themeHanler = () =>{
-  //   theme==='LIGHT'?setTheme('DARK'):setTheme('LIGHT');
+ 
   
   
   const handlerVis = () =>{
@@ -31,7 +31,7 @@ const App = () => {
         <ThemeContext.Provider value={arrThemeState}>
          <BrowserRouter>         
           <Routes>
-            <Route path='/' element={<Homepage/>}/>
+            <Route path='/' element={<HomePage/>}/>
           </Routes>
           </BrowserRouter>
           </ThemeContext.Provider>

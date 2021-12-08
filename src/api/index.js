@@ -29,3 +29,6 @@ export const getUsers = (options = {}) =>{
   return fetch(`${config.BASE_URL}?${query}`)
   .then((response)=>response.json());
 }
+export const getUsersJSON = () =>{
+  return fetch('/users.json').then((resp)=>resp.json())
+}
