@@ -1,9 +1,10 @@
 
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FuncStopWatch from './components/FuncStopWatch'
 import { ThemeContext, UserContext } from './context';
 import Homepage from './pages/HomePage';
+import CONSTANTS from './constants';
+const {THEMES} = CONSTANTS;
 
 const App = () => {
   const [isVisible, setIsvisible] = useState(true);
@@ -12,11 +13,11 @@ const App = () => {
     id:1,
     name:'Ursoc',
   });
-  const [theme, setTheme] = useState('LIGHT');
-
-  const themeHanler = () =>{
-    theme==='LIGHT'?setTheme('DARK'):setTheme('LIGHT');
-  }
+  const arrThemeState = useState(THEMES.LIGHT);
+  // const themeHanler = () =>{
+  //   theme==='LIGHT'?setTheme('DARK'):setTheme('LIGHT');
+  
+  
   const handlerVis = () =>{
     setIsvisible(!isVisible);
   }
@@ -24,13 +25,11 @@ const App = () => {
    
 
   return (
-    <div>
-      
+    <div> 
       
       <UserContext.Provider value={user}>
-        <ThemeContext.Provider value={theme}>
-         <BrowserRouter>
-         <button onClick={themeHanler}>Change theme</button>
+        <ThemeContext.Provider value={arrThemeState}>
+         <BrowserRouter>         
           <Routes>
             <Route path='/' element={<Homepage/>}/>
           </Routes>
@@ -41,6 +40,7 @@ const App = () => {
     </div>
   );
 }
+
 
 export default App;
 
