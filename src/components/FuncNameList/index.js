@@ -1,9 +1,9 @@
-import { getUsersJSON } from './../../api';
+import { getJSON } from './../../api';
 import React , {useState,useEffect} from 'react';
 import {useData, useClicker} from './../../hooks';
 
 const FuncNameList = () => {
-  const {data: users, error, isLoad} = useData(getUsersJSON);
+  const {data: users, error, isLoad} = useData(getJSON);
   const count = useClicker(0);
   if(isLoad){
   return <p>Loading...</p>}

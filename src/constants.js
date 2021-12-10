@@ -6,6 +6,10 @@ const CONSTANTS = {
   LANG:{
     EN:'EN',
     RU:'RU',
+  },
+  ACTIONS:{
+    MENU_OPEN:'MENU_OPEN',
+    MENU_CLOSE:'MENU_CLOSE'
   }
 }
 export default CONSTANTS;

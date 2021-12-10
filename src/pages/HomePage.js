@@ -3,6 +3,7 @@ import FuncNameList from './../components/FuncNameList';
 import UserProfile from '../components/UserProfile';
 import { ThemeContext } from '../context';
 import CONSTANTS from '/home/fm2021-2/Projects/react_app/src/constants';
+import { Link } from 'react-router-dom';
 const {THEMES} = CONSTANTS;
 
 const styleMap = {
@@ -36,12 +37,12 @@ const Homepage = () => {
 
   return (
     <div style={styleMap[theme]}>
+      
       <h2>{keepCalcValue}</h2>
       <input type='number' value={value} onChange={hanlerInput}/>
       <button onClick={themeHanler}>Change theme</button>
       <button onClick={logHanler}>Log value</button>
-      <p>Home page</p>
-      <UserProfile/>
+      <p>Home page</p>      
       <FuncNameList/>
     </div>
   );
