@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
@@ -10,8 +10,9 @@ const NavMenu = () => {
   const containerStyle = cx(styles.container,{
     [styles.open]:isMenuOpen
   });
+  const navRef = useRef(null);
   return (    
-    <nav className={containerStyle}>
+    <nav className={containerStyle} ref={navRef}>
       <CancelPresentationIcon className={styles.closeBtn} onClick={closeMenu}/>
       <ul className={styles.list}>
         <li >

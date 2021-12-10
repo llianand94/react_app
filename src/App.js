@@ -24,15 +24,16 @@ const App = () => {
   const handlerVis = () =>{
     setIsvisible(!isVisible);
   }
-  const openMenu = ()=>dispatch({type: ACTIONS.MENU_OPEN})
+  const openMenu = ()=>dispatch({type: ACTIONS.MENU_OPEN}) 
   const closeMenu = ()=>dispatch({type: ACTIONS.MENU_CLOSE})
+  
   return (
     <div>
       <MenuStateContext.Provider value={{state, closeMenu}}>
       <ThemeContext.Provider value={arrThemeState}>
        <UserContext.Provider value={user}>
          <BrowserRouter>
-         <KeyboardArrowRightIcon onClick={openMenu}/>
+         <KeyboardArrowRightIcon onClick={openMenu} />
          <NavMenu/>        
           <Routes>
             <Route path='/' element={<HomePage/>}/>
